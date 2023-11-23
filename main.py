@@ -40,7 +40,7 @@ for el_with_data in book_publisher_data:
         session.add(sale)
 session.commit()
 
-publisher_name = 'O’Reilly'
+publisher_name = input('Введите имя автора: ')
 
 join_query = session.query(models.Book.title, models.Shop.name, models.Sale.price, models.Sale.date_sale).join(models.Publisher).join(models.Stock).join(models.Shop).join(models.Sale).filter(models.Publisher.name == publisher_name)
 
